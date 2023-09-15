@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> HRA Calculator </title>
+    <link rel="stylesheet" href="HRAcalci.css">
+    <!-- <script src="HRAcalci.js"></script> -->
+</head>
+<body>
+   <nav>
+<!-- insert code here -->
+   </nav>
+
+
+     <section class="boxbig flex">
+        <div class="leftcontainer flex">
+            <h2> House Rent Allowance</h2>
+            <h6>Exemption</h6>
+            <p>
+HRA Exemption = (Actual HRA received) OR (Rent paid - 10% of salary)
+</p>
+   <ul>
+    <li>
+   10% of the salary refers to 10% of the basic salary.
+    </li> 
+    <li>the rented accommodation is located in a metro city, the exemption is 50% of the salary instead of 10%, and for non-metro cities, the exemption is 40% of the salary.
+  </li>
+  <li> The lowest of the following three amounts is eligible for tax exemption:
+   
+    <ul>
+        <li> Total HRA</li>
+        <li> Rent minus the 10%of total inocme if you live in metro city</li>
+        <li> 50%(0r 40%) of Total income</li>
+    </ul>
+    </li>
+</ul>      
+        </div>
+        <div class="rightcontainer flex ">
+            <form >
+                <div class="uppersection">
+                    <h4> Calculate your tax easily </h4>
+                </div>
+
+                <div class="inputfields flex">
+                    <div class="lablepair flex" >
+                    <label> Enter your annual income </label>
+                    <input type="number" id="field1">  </input>
+                </div>
+                   
+                <div class="lablepair flex" id="field2">
+                    <label> Enter the annual HRA offered by your company </label>
+                    <input type="number" >  </input>
+                </div>
+
+                <div class="lablepair  flex" id="field3">
+                    <label> Enter the rent paid by you in last financial Year</label>
+                    <input type="number" >  </input>
+                </div>
+
+                <div class="lablepair">
+                    <label> Do you live in a metro city? </label>
+                    <input type="radio" id="option1" name="option"> Yes  </input>
+                    <input type="radio" id="option2" name="option" > No  </input>
+                </div>
+<!-- button -->
+                <button class="calculate" onclick="calc()"> Calculate </button>
+
+                <!-- after clicking  button -->
+                <div class="lablepair  flex">
+                    <label> Actual rent paid - 10% of Salary </label>
+                    <input type="number" />
+                </div>
+
+                <div class="lablepair  flex">
+                    <label> %of Salary (metro or non mwtro) </label>
+                    <input type="number" />
+                </div>
+
+                <div class="lablepair flex">
+                    <label> The Exempted Amount </label>
+                    <input type="number" />
+                </div>
+
+
+                
+                </div>
+            </form>
+        </div>
+     </section>
+
+<script>
+    function calc(){
+var f1 = document.getElementById("field1").value;
+var f=parseInt(f1);
+
+console.log('hello');
+console.log(f);
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Gratuity Calculator </title>
+    <link rel="stylesheet" href="Gratuity.css">
+    <!-- <script src="HRAcalci.js"></script> -->
+</head>
+<body>
+   <nav>
+<!-- insert code here -->
+   </nav>
+
+
+     <section class="boxbig flex">
+        <div class="leftcontainer flex">
+            <h2> Gratuity! </h2>
+            <h3> Your Employer's way of saying "Thanks"!</h3>
+            <p class="p1">Gratuity = N*B*15/26</p>
+
+   <ul>
+    <li>
+        N = Number of Years Serviced in the Organization
+    </li> 
+    <li> B = Basic Salary including DAs
+  </li>
+
+ <p class="p2">The following formula is considered for the calculation of gratuity amount for employees who are not covered under the Gratuity Act:</p>
+
+<p class="p1">Gratuity Amount = (15 * Last drawn salary amount * period of service) / 30</p>
+ 
+</ul>      
+        </div>
+        <div class="rightcontainer flex ">
+            <form >
+                <div class="uppersection">
+                    <h4> Calculate your Gratuity Easily </h4>
+                </div>
+
+                <div class="inputfields flex">
+                    <div class="lablepair flex" >
+                    <label> Enter your Total Salary (Basic + DA) </label>
+                    <input type="number" id="field1">  </input>
+                </div>
+                   
+                <div class="lablepair flex">
+                    <label> Enter the number of your Service years </label>
+                    <input type="number" />
+                </div>
+
+                <div class="lablepair">
+                    <label> Is your past Workplace covered under Gratuity Act ? </label>
+                    <input type="radio" id="option1" name="option"> Yes  </input>
+                    <input type="radio" id="option2" name="option" > No  </input>
+                </div>
+<!-- button -->
+                <button class="calculate" onclick="calc()"> Calculate </button>
+
+                <!-- after clicking  button -->
+                <div class="lablepair  flex">
+                    <label> Gratuity for you Service : </label>
+                    <input type="number" />
+                </div>
+
+                
+                </div>
+            </form>
+        </div>
+     </section>
+
+<script>
+    function calc(){
+var f1 = document.getElementById("field1").value;
+var f=parseInt(f1);
+
+console.log('hello');
+console.log(f);
+    }
+</script>
+</body>
+</html>
