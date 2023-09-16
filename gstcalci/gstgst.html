@@ -4,13 +4,206 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Goods & Services</title>
-    <link rel="stylesheet" href="gstgst.css">
-     <!-- Font Awesome Icons -->
-     <link
-     rel="stylesheet"
-     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
-   />
-    <!-- <script src="HRAcalci.js"></script> -->
+    <style>
+  @import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Kalam:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&family=Roboto:wght@300;400;500&display=swap');
+*{
+    margin: 0px;
+    padding:0px;
+    box-sizing: border-box;
+}
+
+a{
+    text-decoration: none;
+}
+
+:root{
+    --backgroundcolor: #006E96;
+    --primarybutton: #392958;
+    --paddingall: 40px;
+    /* 9f7aea */
+}
+
+body{
+    font-family: 'Poppins',sans-serif;
+ 
+}
+
+h1{
+    font-size:3rem;
+}
+
+h2{
+    font-size: 2rem;
+}
+
+h3{
+    font-size:1.5rem ;
+}
+
+h3{
+    font-style: italic;
+    font-family: 'Kalam', cursive;
+   
+ }
+
+ul{
+    padding: 10px;
+}
+nav{
+ width: 100%;
+ background-color: #9f7aea;
+ height: 100px;
+}
+
+
+/* bigcontainer section */
+.boxbig{
+    /* justify-content: space-between !important; */
+    height: 100%;
+    width: 100%;
+    gap: 50px;
+   
+}
+
+.leftcontainer{
+    flex-direction: column;
+    padding: var(--paddingall); 
+    background: var(--backgroundcolor);
+    flex-wrap: wrap;
+    color: white;
+    width: 50%;
+    align-items: center;
+  
+
+
+    
+}
+ .h6{
+    font-family: 'Poppins';
+    
+ }
+
+.p2{
+    padding-top: 25px;
+    padding-bottom: 25px;
+
+}
+.p1{
+   /* font-style:oblique; */
+   font-family: 'Poppins';
+   font-size: large;
+   font-weight: 700;
+   margin: 16px 0px;
+   border: 0.2px solid rgb(196, 196, 196);
+   text-align: center;
+   padding: 15px;
+   border-radius: 20px;
+}
+
+.leftcontainer h2{
+    text-align: center;
+    
+
+}
+
+ /* .rightcontainer{
+  flex-direction:column ;
+  padding: var(--paddingall); 
+  
+}  */
+
+.rightcontainer{
+     flex-direction: column;
+    /* padding: var(--paddingall);  */
+    margin: 20px;
+    align-items: center; 
+}
+
+.total-amount-container{
+    flex-direction: column;
+    border: 0.5px solid white;
+    border-radius: 20px;
+    align-items: center;
+    width:fit-content;
+    padding: 10px
+    
+}
+
+#total-amount{
+    margin-bottom: 1em;
+    padding: 6px;
+    border: 1px solid white;
+    border-radius: 2px;
+  }
+
+.output-container {
+  background-color: #006E96;
+  color: #ffffff;
+  border-radius: 0.3em;
+  box-shadow: 0 0.6em 1.2em rgba(28, 0, 80, 0.06);
+  margin: 2em 0;
+  padding: 20px 100px;
+ 
+  
+}
+
+td{
+  margin: 5px;
+}
+.output-container p {
+  font-weight: 500;
+  margin-bottom: 0.6em;
+}
+.output-container span {
+  display: block;
+  text-align: center;
+  font-weight: 400;
+  color: #e5e5e5;
+}
+.submit {
+  font-size: 1em;
+  margin-top: 0.8em;
+  background-color: #392958;
+  border: none;
+  outline: none;
+  color: #ffffff;
+  padding: 0.6em 1.2em;
+  border-radius: 0.3em;
+  cursor: pointer;
+}
+.list {
+  background-color: #ffffff;
+  padding: 1.8em 1.2em;
+  box-shadow: 0 0.6em 1.2em rgba(28, 0, 80, 0.06);
+  border-radius: 0.6em;
+  
+}
+
+.list{
+ flex-direction: column;
+
+}
+.list-container{
+    flex-direction: column;
+    justify-content: space-between;
+    width: 1000px;
+}
+
+/* utilityclasses */
+.flex
+{
+    display: flex;
+     /* align-items: center;  */
+   
+}
+
+.flex-space {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }</style>
 </head>
 <body>
    <nav>
