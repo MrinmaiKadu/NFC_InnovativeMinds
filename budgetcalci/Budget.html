@@ -1,84 +1,345 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Budget Tool </title>
-    <link rel="stylesheet" href="bugdet.css">
-     <!-- Font Awesome Icons -->
-     <link
-     rel="stylesheet"
-     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
-   />
-    <!-- <script src="HRAcalci.js"></script> -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Budget Tool </title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Kalam:wght@300&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&family=Roboto:wght@300;400;500&display=swap');
+
+    * {
+      margin: 0px;
+      padding: 0px;
+      box-sizing: border-box;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    :root {
+      --backgroundcolor: #006E96;
+      --primarybutton: #392958;
+      --paddingall: 40px;
+      /* 9f7aea */
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+
+    }
+
+    h1 {
+      font-size: 3rem;
+    }
+
+    h2 {
+      font-size: 2rem;
+    }
+
+    h3 {
+      font-size: 1.5rem;
+    }
+
+    h3 {
+      font-style: italic;
+      font-family: 'Kalam', cursive;
+
+    }
+
+    ul {
+      padding: 10px;
+    }
+
+    nav {
+      width: 100%;
+      background-color: #9f7aea;
+      height: 100px;
+    }
+
+
+    /* bigcontainer section */
+    .boxbig {
+      /* justify-content: space-between !important; */
+      height: 100%;
+      width: 100%;
+      gap: 50px;
+
+    }
+
+    .leftcontainer {
+      flex-direction: column;
+      padding: var(--paddingall);
+      background: var(--backgroundcolor);
+      flex-wrap: wrap;
+      color: white;
+      width: fit-content;
+      align-items: left;
+      gap: 40px;
+
+
+
+    }
+
+    .h6 {
+      font-family: 'Poppins';
+
+    }
+
+    .p2 {
+      padding-top: 25px;
+      padding-bottom: 25px;
+
+    }
+
+    .p1 {
+      /* font-style:oblique; */
+      font-family: 'Poppins';
+      font-size: large;
+      font-weight: 700;
+      margin: 16px 0px;
+      border: 0.2px solid rgb(196, 196, 196);
+      text-align: center;
+      padding: 15px;
+      border-radius: 20px;
+    }
+
+    .leftcontainer h2 {
+      text-align: center;
+
+
+    }
+
+
+    /* .rightcontainer{
+  flex-direction:column ;
+  padding: var(--paddingall); 
+  
+}  */
+
+    .rightcontainer {
+      flex-direction: column;
+      /* padding: var(--paddingall);  */
+      margin: 20px;
+      align-items: center;
+    }
+
+    .total-amount-container {
+      flex-direction: column;
+      border: 0.5px solid white;
+      padding: 20px;
+      border-radius: 20px;
+      align-items: center;
+      width: 250px;
+
+    }
+
+    #total-amount {
+      margin-bottom: 1em;
+      padding: 6px;
+      border: 1px solid white;
+      border-radius: 2px;
+    }
+
+    #user-amount {
+      margin-bottom: 1em;
+      padding: 6px;
+      border: 1px solid white;
+      border-radius: 2px;
+    }
+
+
+
+    .user-amount-container {
+      flex-direction: column;
+      border: 0.5px solid white;
+      padding: 20px;
+      border-radius: 20px;
+      align-items: center;
+      width: 250px;
+    }
+
+
+    .output-container {
+      background-color: #006E96;
+      color: #ffffff;
+      border-radius: 0.3em;
+      box-shadow: 0 0.6em 1.2em rgba(28, 0, 80, 0.06);
+      margin: 2em 0;
+      padding: 20px 100px;
+      width: 1035px;
+    }
+
+    .output-container p {
+      font-weight: 500;
+      margin-bottom: 0.6em;
+    }
+
+    .output-container span {
+      display: block;
+      text-align: center;
+      font-weight: 400;
+      color: #e5e5e5;
+    }
+
+    .submit {
+      font-size: 1em;
+      margin-top: 0.8em;
+      background-color: #392958;
+      border: none;
+      outline: none;
+      color: #ffffff;
+      padding: 0.6em 1.2em;
+      border-radius: 0.3em;
+      cursor: pointer;
+    }
+
+    .list {
+      background-color: #ffffff;
+      padding: 1.8em 1.2em;
+      box-shadow: 0 0.6em 1.2em rgba(28, 0, 80, 0.06);
+      border-radius: 0.6em;
+
+    }
+
+    .sublist-content {
+      width: 100%;
+      border-left: 0.3em solid #587ef4;
+      margin-bottom: 0.6em;
+      padding: 0.5em 1em;
+      display: grid;
+      grid-template-columns: 3fr 2fr 1fr 1fr;
+    }
+
+    .product {
+      font-weight: 500;
+      color: #363d55;
+    }
+
+    .amount {
+      color: #414a67;
+      margin-left: 20%;
+    }
+
+    .icons-container {
+      width: 5em;
+      margin: 1.2em;
+      align-items: center;
+    }
+
+    .product-title {
+      margin-bottom: 1em;
+      padding: 6px;
+      border: 1px solid white;
+      border-radius: 2px;
+    }
+
+    .hide {
+      display: none;
+    }
+
+    .error {
+      color: #ff465a;
+    }
+
+    .edit {
+      margin-left: auto;
+    }
+
+    .edit,
+    .delete {
+      background: transparent;
+      cursor: pointer;
+      margin-right: 1.5em;
+      border: none;
+      color: #006E96;
+    }
+
+    .list {
+      flex-direction: column;
+
+    }
+
+    .list-container {
+      flex-direction: column;
+      justify-content: space-between;
+      width: 1000px;
+    }
+
+    /* utilityclasses */
+    .flex {
+      display: flex;
+      /* align-items: center;  */
+
+    }
+
+    .flex-space {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  </style>
+  <!-- <script src="HRAcalci.js"></script> -->
 </head>
+
 <body>
-   <nav>
-<!-- insert code here -->
-   </nav>
+  <nav>
+    <!-- insert code here -->
+  </nav>
 
 
-     <section class="boxbig flex">
-        <div class="leftcontainer flex">
-            <div class="total-amount-container flex">
-                <h3>Budget</h3>
-                <p class="hide error" id="budget-error">
-                  Value cannot be empty or negative
-                </p>
-                <input
-                  type="number"
-                  id="total-amount"
-                  placeholder="Enter +Total Budget"
-                />
-                <button class="submit" id="total-amount-button">Set Budget</button>
-              </div>
-    
-              <!-- Expenditure -->
-              <div class="user-amount-container flex">
-                <h3>Expenses</h3>
-                <p class="hide error" id="product-title-error">
-                  Values cannot be empty
-                </p>
-                <input
-                  type="text"
-                  class="product-title"
-                  id="product-title"
-                  placeholder="Enter Title of Product"
-                />
-                <input
-                  type="number"
-                  id="user-amount"
-                  placeholder="Enter Cost of Product"
-                />
-                <button class="submit" id="check-amount">Check Amount</button>
-              </div>
-            </div>
+  <section class="boxbig flex">
+    <div class="leftcontainer flex">
+      <div class="total-amount-container flex">
+        <h3>Budget</h3>
+        <p class="hide error" id="budget-error">
+          Value cannot be empty or negative
+        </p>
+        <input type="number" id="total-amount" placeholder="Enter +Total Budget" />
+        <button class="submit" id="total-amount-button">Set Budget</button>
+      </div>
 
+      <!-- Expenditure -->
+      <div class="user-amount-container flex">
+        <h3>Expenses</h3>
+        <p class="hide error" id="product-title-error">
+          Values cannot be empty
+        </p>
+        <input type="text" class="product-title" id="product-title" placeholder="Enter Title of Product" />
+        <input type="number" id="user-amount" placeholder="Enter Cost of Product" />
+        <button class="submit" id="check-amount">Check Amount</button>
+      </div>
+    </div>
+
+    </div>
+    <div class="rightcontainer flex ">
+      <div class="output-container flex-space">
+        <div>
+          <p>Total Budget</p>
+          <span id="amount">0</span>
         </div>
-        <div class="rightcontainer flex ">
-            <div class="output-container flex-space">
-                <div>
-                  <p>Total Budget</p>
-                  <span id="amount">0</span>
-                </div>
-                <div>
-                  <p>Expenses</p>
-                  <span id="expenditure-value">0</span>
-                </div>
-                <div>
-                  <p>Balance</p>
-                  <span id="balance-amount">0</span>
-                </div>
-              </div>
-                <!-- List -->
-            <div class="list flex ">
-                <h3>Expense List</h3>
-                <div class="list-container flex" id="list"></div>
-              </div>
-            </div>
-            </div>
-     </section>
+        <div>
+          <p>Expenses</p>
+          <span id="expenditure-value">0</span>
+        </div>
+        <div>
+          <p>Balance</p>
+          <span id="balance-amount">0</span>
+        </div>
+      </div>
+      <!-- List -->
+      <div class="list flex ">
+        <h3>Expense List</h3>
+        <div class="list-container flex" id="list"></div>
+      </div>
+    </div>
+    </div>
+  </section>
 
-     <script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
+
 </html>
