@@ -1,82 +1,257 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Gratuity Calculator </title>
-    <link rel="stylesheet" href="Gratuity.css">
-    <!-- <script src="HRAcalci.js"></script> -->
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Kalam:wght@300&display=swap');
+    @import
+    url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&family=Roboto:wght@300;400;500&display=swap');
+    *{
+    margin: 0px;
+    padding:0px;
+    box-sizing: border-box;
+    }
+
+    a{
+    text-decoration: none;
+    }
+
+    :root{
+    --backgroundcolor: #006E96;
+    --primarybutton: #392958;
+    --paddingall: 40px;
+    /* 9f7aea */
+    }
+
+    body{
+    font-family: 'Poppins',sans-serif;
+
+    }
+
+    h1{
+    font-size:3rem;
+    }
+
+    h2{
+    font-size: 2rem;
+    }
+
+    h3{
+    font-size:1.5rem ;
+    }
+
+    h3{
+    font-style: italic;
+    font-family: 'Kalam', cursive;
+
+    }
+
+    ul{
+    padding: 10px;
+    }
+    nav{
+    width: 100%;
+    background-color: #9f7aea;
+    height: 100px;
+    }
+
+
+    /* bigcontainer section */
+    .boxbig{
+    /* justify-content: space-between !important; */
+    height: 100%;
+    width: 100%;
+    gap: 50px;
+
+    }
+    .leftcontainer{
+    flex-direction: column;
+    padding: var(--paddingall);
+    background: var(--backgroundcolor);
+    flex-wrap: wrap;
+    color: white;
+    width: 50%;
+    align-items: center;
+
+    }
+    .h6{
+    font-family: 'Poppins';
+
+    }
+
+    .p2{
+    padding-top: 25px;
+    padding-bottom: 25px;
+
+    }
+    .p1{
+    /* font-style:oblique; */
+    font-family: 'Poppins';
+    font-size: large;
+    font-weight: 700;
+    margin: 16px 0px;
+    border: 0.2px solid rgb(196, 196, 196);
+    text-align: center;
+    padding: 15px;
+    border-radius: 20px;
+    }
+
+    .leftcontainer h2{
+    text-align: center;
+    }
+
+
+    /* .rightcontainer{
+    flex-direction:column ;
+    padding: var(--paddingall);
+
+    } */
+
+    .rightcontainer{
+    flex-direction: row;
+    /* padding: var(--paddingall); */
+    margin: 20px;
+    align-items: center;
+
+
+
+    }
+
+    form{
+    border: 0.3px solid rgb(203, 203, 203);
+    border-radius: 20px;
+    /* box-shadow: 60px -16px #392958 ; */
+    flex-direction: column;
+    height: fit-content;
+    width: 700px;
+    margin-right: 40px;
+
+
+    }
+
+    .lablepair{
+    justify-content: space-between;
+    }
+    .inputfields{
+    flex-direction: column;
+    gap:35px;
+    padding:var(--paddingall);
+
+    }
+
+    /* CSS */
+    .calculate {
+    background-color: var(--primarybutton);
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    }
+
+
+    .calculate:hover {
+    background-color:#4e387a;
+    }
+
+    .uppersection{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+    background-color: var(--backgroundcolor);
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+    color: white;
+
+
+    }
+
+    /* utilityclasses */
+    .flex
+    {
+    display: flex;
+    /* align-items: center; */
+
+    }
+</style>
 </head>
+
 <body>
-   <nav>
-<!-- insert code here -->
-   </nav>
+    <nav>
+        <!-- insert code here -->
+    </nav>
 
 
-     <section class="boxbig flex">
+    <section class="boxbig flex">
         <div class="leftcontainer flex">
             <h2> Gratuity! </h2>
             <h3> Your Employer's way of saying "Thanks"!</h3>
             <p class="p1">Gratuity = N*B*15/26</p>
 
-   <ul>
-    <li>
-        N = Number of Years Serviced in the Organization
-    </li> 
-    <li> B = Basic Salary including DAs
-  </li>
+            <ul>
+                <li>
+                    N = Number of Years Serviced in the Organization
+                </li>
+                <li> B = Basic Salary including DAs
+                </li>
 
- <p class="p2">The following formula is considered for the calculation of gratuity amount for employees who are not covered under the Gratuity Act:</p>
+                <p class="p2">The following formula is considered for the calculation of gratuity amount for employees
+                    who are not covered under the Gratuity Act:</p>
 
-<p class="p1">Gratuity Amount = (15 * Last drawn salary amount * period of service) / 30</p>
- 
-</ul>      
+                <p class="p1">Gratuity Amount = (15 * Last drawn salary amount * period of service) / 30</p>
+
+            </ul>
         </div>
         <div class="rightcontainer flex ">
-            <form >
+            <form>
                 <div class="uppersection">
                     <h4> Calculate your Gratuity Easily </h4>
                 </div>
 
                 <div class="inputfields flex">
-                    <div class="lablepair flex" >
-                    <label> Enter your Total Salary (Basic + DA) </label>
-                    <input type="number" id="field1">  </input>
-                </div>
-                   
-                <div class="lablepair flex">
-                    <label> Enter the number of your Service years </label>
-                    <input type="number" />
-                </div>
+                    <div class="lablepair flex">
+                        <label> Enter your Total Salary (Basic + DA) </label>
+                        <input type="number" id="field1"> </input>
+                    </div>
 
-                <div class="lablepair">
-                    <label> Is your past Workplace covered under Gratuity Act ? </label>
-                    <input type="radio" id="option1" name="option"> Yes  </input>
-                    <input type="radio" id="option2" name="option" > No  </input>
-                </div>
-<!-- button -->
-                <button class="calculate" onclick="calc()"> Calculate </button>
+                    <div class="lablepair flex">
+                        <label> Enter the number of your Service years </label>
+                        <input type="number" />
+                    </div>
 
-                <!-- after clicking  button -->
-                <div class="lablepair  flex">
-                    <label> Gratuity for you Service : </label>
-                    <input type="number" />
-                </div>
+                    <div class="lablepair">
+                        <label> Is your past Workplace covered under Gratuity Act ? </label>
+                        <input type="radio" id="option1" name="option"> Yes </input>
+                        <input type="radio" id="option2" name="option"> No </input>
+                    </div>
+                    <!-- button -->
+                    <button class="calculate" onclick="calc()"> Calculate </button>
 
-                
+                    <!-- after clicking  button -->
+                    <div class="lablepair  flex">
+                        <label> Gratuity for you Service : </label>
+                        <input type="number" />
+                    </div>
+
+
                 </div>
             </form>
         </div>
-     </section>
+    </section>
 
-<script>
-    function calc(){
-var f1 = document.getElementById("field1").value;
-var f=parseInt(f1);
+    <script>
+        function calc() {
+            var f1 = document.getElementById("field1").value;
+            var f = parseInt(f1);
 
-console.log('hello');
-console.log(f);
-    }
-</script>
+            console.log('hello');
+            console.log(f);
+        }
+    </script>
 </body>
+
 </html>
