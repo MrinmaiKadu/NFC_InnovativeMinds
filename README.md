@@ -1,4 +1,4 @@
 # NFC_InnovativeMinds
 Need For Code 2.0 hackathon | Web Domain |
 
-Creating awareness and supprot to the Indian Citizens to manage taxes , understand about them and become a responsible citizen.
+Creating awareness and providing support to the Indian Citizens for managing taxes , understand everything about them and become a responsible citizen.
