@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> HRA Calculator </title>
+    <!-- <link rel="stylesheet" href="HRAcalci.css"> -->
+    <!-- <script src="HRAcalci.js"></script> -->
+    <style>
+        
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&family=Roboto:wght@300;400;500&display=swap');
+*{
+    margin: 0px;
+    padding:0px;
+    box-sizing: border-box;
+}
+
+a{
+    text-decoration: none;
+}
+
+:root{
+    --backgroundcolor: #006E96;
+    --primarybutton: #392958;
+    --paddingall: 40px;
+    /* 9f7aea */
+}
+
+body{
+    font-family: 'Poppins',sans-serif;
+ 
+}
+
+h1{
+    font-size:3rem;
+}
+
+h2{
+    font-size: 2rem;
+}
+
+h3{
+    font-size:1.5rem ;
+}
+
+ul{
+    padding: var(--paddingall);
+}
+nav{
+ width: 100%;
+ background-color: #9f7aea;
+ height: 100px;
+}
+
+
+/* bigcontainer section */
+.boxbig{
+    /* justify-content: space-between !important; */
+    height: 100%;
+    width: 100%;
+    gap: 50px;
+   
+}
+.leftcontainer{
+    flex-direction: column;
+     padding: var(--paddingall); 
+    background: var(--backgroundcolor);
+    flex-wrap: wrap;
+    color: white;
+    width: 50%;
+    align-items: center;
+    
+}
+ h6{
+    font-style: italic;
+    font-family: 'Roboto',sans-serif;
+   
+ }
+
+ .leftcontainer p{
+    /* font-style:oblique; */
+    font-family: 'Poppins';
+    font-size: large;
+    font-weight: 700;
+    margin: 16px 0px;
+    border: 0.2px solid rgb(196, 196, 196);
+    text-align: center;
+ }
+/* 
+.leftcontainer p{
+   font-style:oblique;
+   margin: 8px 0px;
+} */
+
+.leftcontainer h2{
+    text-align: center;
+}
+
+
+ /* .rightcontainer{
+  flex-direction:column ;
+  padding: var(--paddingall); 
+  
+}  */
+
+.rightcontainer{
+     flex-direction: row;
+    /* padding: var(--paddingall);  */
+    margin: 20px;
+
+   
+}
+
+form{
+    border: 0.3px solid rgb(203, 203, 203);
+    border-radius: 20px;
+    /* box-shadow: 60px -16px #392958 ; */
+    flex-direction: column;
+    height: fit-content;
+    width: 700px;
+    margin-right: 40px;
+  
+}
+
+.lablepair{
+    justify-content: space-between;
+}
+.inputfields{
+    flex-direction: column;
+    gap:35px;  
+    padding:var(--paddingall);
+    
+}
+
+/* CSS */
+.calculate {
+    background-color: var(--primarybutton);
+    color: #fff; 
+    padding: 10px 20px; 
+    border: none; 
+    border-radius: 5px; 
+    cursor: pointer;
+  }
+  
+  
+  .calculate:hover {
+    background-color:#4e387a; 
+  }
+  
+.uppersection{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+    background-color: var(--backgroundcolor);
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+    color: white;
+    
+
+}
+
+/* utilityclasses */
+.flex
+{
+    display: flex;
+     /* align-items: center;  */
+   
+}
+    </style>
+</head>
+<body>
+   <nav>
+<!-- insert code here -->
+   </nav>
+
+
+     <section class="boxbig flex">
+        <div class="leftcontainer flex">
+            <h2> House Rent Allowance</h2>
+            <h6>Exemption</h6>
+            <p>
+HRA Exemption = (Actual HRA received) OR (Rent paid - 10% of salary)
+</p>
+   <ul>
+    <li>
+   10% of the salary refers to 10% of the basic salary.
+    </li> 
+    <li>the rented accommodation is located in a metro city, the exemption is 50% of the salary instead of 10%, and for non-metro cities, the exemption is 40% of the salary.
+  </li>
+  <li> The lowest of the following three amounts is eligible for tax exemption:
+   
+    <ul>
+        <li> Total HRA</li>
+        <li> Rent minus the 10%of total inocme if you live in metro city</li>
+        <li> 50%(0r 40%) of Total income</li>
+    </ul>
+    </li>
+</ul>      
+        </div>
+        <div class="rightcontainer flex">
+            <form>
+                <div class="uppersection">
+                    <h4>Calculate your tax easily</h4>
+                </div>
+
+                <div class="inputfields flex">
+                    <div class="lablepair flex">
+                        <label for="field1">Enter your annual income</label>
+                        <input type="number" id="field1">
+                    </div>
+
+                    <div class="lablepair flex">
+                        <label for="field2">Enter the annual HRA offered by your company</label>
+                        <input type="number" id="field2">
+                    </div>
+
+                    <div class="lablepair flex">
+                        <label for="field3">Enter the rent paid by you in the last financial Year</label>
+                        <input type="number" id="field3">
+                    </div>
+
+                    <div class="lablepair">
+                        <label>Do you live in a metro city?</label>
+                        <input type="radio" id="option1" name="option"> Yes
+                        <input type="radio" id="option2" name="option"> No
+                    </div>
+                    <!-- button -->
+                    <button class="calculate">Calculate</button>
+
+                    <!-- after clicking button -->
+                    <div class="lablepair flex">
+                        <label id="result1"></label>
+                    </div>
+
+                    <div class="lablepair flex">
+                        <label id="result2"></label>
+                    </div>
+
+                    <div class="lablepair flex">
+                        <label id="result3"></label>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <script>
+        const calculateButton = document.querySelector('.calculate');
+        const result1 = document.querySelector('#result1');
+        const result2 = document.querySelector('#result2');
+        const result3 = document.querySelector('#result3');
+
+        calculateButton.addEventListener('click', function (e) {
+            e.preventDefault();
+
+            const field1 = parseFloat(document.querySelector('#field1').value);
+            const field2 = parseFloat(document.querySelector('#field2').value);
+            const field3 = parseFloat(document.querySelector('#field3').value);
+            const option1 = document.querySelector('#option1').checked;
+
+            const result1Value = Math.abs(field3 - (0.1 * field1));
+            const result2Value = option1 ? (0.5 * field1) : (0.4 * field1);
+            const result3Value = Math.min(result1Value, result2Value, field2);
+
+            result1.textContent = `Actual rent paid - 10% of Salary: ${result1Value.toFixed(2)}`;
+            result2.textContent = `% of Salary (metro or non metro): ${result2Value.toFixed(2)}`;
+            result3.textContent = `The Exempted Amount: ${result3Value.toFixed(2)}`;
+        });
+    </script>
+</body>
+</html>
